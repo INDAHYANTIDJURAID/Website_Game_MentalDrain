@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENTAL DRAIN - Logical Endurance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Main Menu -->
+        <section id="menu-screen" class="screen active">
+            <h1 class="glitch" data-text="MENTAL DRAIN">MENTAL DRAIN</h1>
+            <p class="subtitle">UJI KETAHANAN LOGIKA</p>
+            <button id="start-btn" class="btn primary">MULAI TES</button>
+            <div class="instructions">
+                <p>TARGET: Pilih objek yang memenuhi SEMUA aturan aktif.</p>
+                <p>PERINGATAN: Aturan menumpuk. Distraksi aktif.</p>
+            </div>
+        </section>
+
+        <!-- Game Interface -->
+        <section id="game-screen" class="screen hidden">
+            <header>
+                <div class="hud-item">LEVEL: <span id="level-display">01</span></div>
+                <div class="hud-item timer-container">WAKTU: <div id="timer-bar">
+                        <div id="timer-fill"></div>
+                    </div>
+                </div>
+                <div class="hud-item error-container">SALAH: <span id="mistakes-display">0</span>/<span
+                        id="max-mistakes">3</span></div>
+                <div class="hud-item score-container">SKOR: <span id="score-display">0</span></div>
+            </header>
+
+            <div class="game-layout">
+                <aside class="rules-panel">
+                    <h2>PROTOKOL AKTIF</h2>
+                    <ul id="rules-list">
+                        <!-- Rules injected here -->
+                    </ul>
+                </aside>
+
+                <main class="grid-container">
+                    <div id="game-grid">
+                        <!-- Objects injected here -->
+                    </div>
+                </main>
+            </div>
+
+            <div id="debug-controls" class="hidden">
+                <label><input type="checkbox" id="toggle-debug"> MODE ADMIN</label>
+            </div>
+        </section>
+
+        <!-- Game Over Screen -->
+        <section id="game-over-screen" class="screen hidden">
+            <h2 class="alert">KEGAGALAN SISTEM</h2>
+            <p>BEBAN KOGNITIF MAKSIMAL</p>
+            <div class="stats">
+                <p>LEVEL AKHIR: <span id="final-level"></span></p>
+                <p>TOTAL SKOR: <span id="final-score"></span></p>
+            </div>
+            <div class="actions">
+                <button id="restart-btn" class="btn primary">LANJUT</button>
+                <button id="menu-btn" class="btn">KEMBALI</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
